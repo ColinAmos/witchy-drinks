@@ -4,7 +4,6 @@ import './App.css';
 import { Background, MixingStation } from "./components";
 
 class App extends React.Component {
-
   render() {
     return (
       <div className="app-container">
@@ -13,7 +12,6 @@ class App extends React.Component {
       </div>
     );
   }
-
 }
 
 export default App;
