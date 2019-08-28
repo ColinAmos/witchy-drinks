@@ -6,14 +6,20 @@ import ingredientImage from "../images/placeholder-ingredient.png";
 class MixingStation extends React.Component {
     render() {
         return (
-            <div className="ingredients">
-                <Ingredient image={ingredientImage}/>
-                <Ingredient />
-                <Ingredient />
-                <Ingredient />
-                <Ingredient />
-                <Ingredient />
-            </div> 
+            <div className="mixing-station-wrapper">
+                <div className="mixing-station">
+                    {/* <div className="ingredient-shelf">
+
+                    </div> */}
+                    <Ingredient image={ingredientImage}/>
+                    <Ingredient image={ingredientImage}/>
+                    <Ingredient image={ingredientImage}/>
+                    <Ingredient image={ingredientImage}/>
+                    <Ingredient image={ingredientImage}/>
+                    <Ingredient image={ingredientImage}/>
+                </div> 
+            </div>
+            
         )
     }
 }
