@@ -3,6 +3,7 @@
   width: 100vw;
   height: 100vh;
   background-color: rgb(79, 58, 85);
+  overflow: hidden;
 }
 
 .background-image {
@@ -18,4 +19,6 @@
   position: absolute;
   left: 0;
   top: 0;
+  width: auto;
+  height: 200px;
 }

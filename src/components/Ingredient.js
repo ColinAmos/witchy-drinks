@@ -1,8 +1,14 @@
 import React from "react";
 
+import Draggable from "react-draggable";
+
 const Ingredient = ({ image }) => {
+
     return (
-        <img className="ingredient" alt="" src={ image }/>
+        <Draggable>
+            <img className="ingredient" alt="" src={ image } draggable="false"/>
+        </Draggable>
+        
     )
 }
 
