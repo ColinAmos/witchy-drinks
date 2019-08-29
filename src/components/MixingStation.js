@@ -1,8 +1,7 @@
 import React from "react";
 
-import Ingredient from "./Ingredient";
+import { Ingredient } from "../components";
 import ingredientImage from "../images/placeholder-ingredient.png";
-
 
 
 class MixingStation extends React.Component {
@@ -10,8 +9,7 @@ class MixingStation extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            boundsW: 16,
-            boundsH: 9
+            scale: 1
         }
     }
 
@@ -21,44 +19,41 @@ class MixingStation extends React.Component {
     }
 
     updateDimensions = () => {
-        // Keep aspect ratio
-        let boundsW, boundsH;
-        const aspectRatioW = 9, aspectRatioH = 16;
-        // Detect window orientation
-        if (window.innerHeight*aspectRatioW < window.innerWidth*aspectRatioH) {
-            // Window is landscape
-            boundsH = window.innerHeight;
-            boundsW = boundsH * aspectRatioW/aspectRatioH;
-        }
-        else {
-            // Window is portrait
-            boundsW = window.innerWidth;
-            boundsH = boundsW * aspectRatioH/aspectRatioW;
-        }
+        // Scale app area to fit window
+        let area = document.getElementById("mixing-station");
+        let style = window.getComputedStyle(area);
+        let w = parseFloat(style.getPropertyValue("width"));
+        let h = parseFloat(style.getPropertyValue("height"));
+        let newScale = Math.min(
+            (window.innerWidth/w),
+            (window.innerHeight/h)
+        )
+        // Scale active content area
+        if (area) area.style.transform = "translate(-50%, -50%) scale(" + newScale + ") ";
+        // Save scale in state
         this.setState({
-            boundsW: boundsW,
-            boundsH: boundsH
+            scale: newScale
         })
     }
 
+    handleDragStop = () => {
+        // Do something when an ingredient is dropped
+    }
+    
     render() {
         return (
-            <div className="mixing-station-wrapper">
-                <div className="mixing-station" style={{ width: this.state.boundsW, height: this.state.boundsH }}>
-                    {/* <div className="ingredient-shelf">
-
-                    </div> */}
-                    <Ingredient image={ingredientImage}/>
-                    <Ingredient image={ingredientImage}/>
-                    <Ingredient image={ingredientImage}/>
-                    <Ingredient image={ingredientImage}/>
-                    <Ingredient image={ingredientImage}/>
-                    <Ingredient image={ingredientImage}/>
+            <div id="mixing-station-wrapper">
+                <div id="mixing-station">
+                    <Ingredient scale={this.state.scale} handleDragStop={this.handleDragStop} image={ingredientImage}/>
+                    <Ingredient scale={this.state.scale} handleDragStop={this.handleDragStop} image={ingredientImage}/>
+                    <Ingredient scale={this.state.scale} handleDragStop={this.handleDragStop} image={ingredientImage}/>
                 </div> 
+
             </div>
-            
         )
     }
+    
 }
+
 
 export default MixingStation;

@@ -15,39 +15,30 @@
   height: 100%;
 }
 
-.mixing-station-wrapper {
+#mixing-station-wrapper {
+  padding: 20px;
+  resize: both;
   position: absolute;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
   height: 100%;
   width: 100%;
-}
-
-.mixing-station {
-  display: flex;
-  flex-flow: column nowrap;
-  border: lightblue 2px inset;
+  border: 2px dotted greenyellow;
   box-sizing: border-box;
-  max-width: 99%;
-  max-height: 99%;
-  transform: scale(1);
 }
 
-
+#mixing-station {
+  width: 400px;
+  height: 600px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 2px dotted lightblue;
+  box-sizing: border-box;
+}
 
 .ingredient {
   position: absolute;
-  left: 20%;
-  top: 50%;
-  width: 200px;
+  left: 0;
+  top: 0;
+  width: 30%;
   height: auto;
-}
-
-.ingredient-shelf {
-  position: absolute;
-  width: 80vw;
-  height: 20vw;
-  background-color: darkred;
 }
