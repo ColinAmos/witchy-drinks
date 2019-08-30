@@ -32,7 +32,7 @@
   left: 50%;
   top: 50%;
   /* border: 2px dotted lightblue; */
-  background: rgba(80, 13, 71, 0.37);
+  background: rgba(44, 7, 39, 0.541);
   box-sizing: border-box;
 }
 
@@ -42,4 +42,14 @@
   top: 0;
   width: 30%;
   height: auto;
+}
+
+#cauldron {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 90%;
+  height: auto;
+  transform: translate(-50%, 10%);
+  z-index: -2;
 }

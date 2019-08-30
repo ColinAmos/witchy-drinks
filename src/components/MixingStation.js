@@ -8,7 +8,7 @@ import ingredient__sun from "../images/potion__orange.png";
 import ingredient__plant from "../images/potion__green.png";
 import ingredient__animal from "../images/potion__brown.png";
 import ingredient__ground from "../images/potion__gray.png";
-
+import cauldron from "../images/cauldron.png";
 
 
 class MixingStation extends React.Component {
@@ -66,6 +66,7 @@ class MixingStation extends React.Component {
             <div id="mixing-station-wrapper">
                 <div id="mixing-station">
                     {ingredientComponents}
+                    <img id="cauldron" src={cauldron} alt="" draggable="false"/>
                 </div>
             </div>
         )
