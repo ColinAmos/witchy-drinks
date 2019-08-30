@@ -41,14 +41,18 @@ class MixingStation extends React.Component {
     }
     
     render() {
+
+        // Create Ingredient components
+        const imageArray = [0, 1, 2, 3, 4, 5];
+        const ingredientComponents = imageArray.map((image, index) => {
+            return <Ingredient scale={this.state.scale} handleDragStop={this.handleDragStop} image={ingredientImage} key={index}/>
+        })
+
         return (
             <div id="mixing-station-wrapper">
                 <div id="mixing-station">
-                    <Ingredient scale={this.state.scale} handleDragStop={this.handleDragStop} image={ingredientImage}/>
-                    <Ingredient scale={this.state.scale} handleDragStop={this.handleDragStop} image={ingredientImage}/>
-                    <Ingredient scale={this.state.scale} handleDragStop={this.handleDragStop} image={ingredientImage}/>
-                </div> 
-
+                    {ingredientComponents}
+                </div>
             </div>
         )
     }
