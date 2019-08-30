@@ -1,4 +1,4 @@
-.app-container {
+#app-container {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.background-image {
+#background-image {
   position: absolute;
   left: 0;
   top: 0;
@@ -21,7 +21,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  border: 2px dotted greenyellow;
+  /* border: 2px dotted greenyellow; */
   box-sizing: border-box;
 }
 
@@ -31,7 +31,8 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  border: 2px dotted lightblue;
+  /* border: 2px dotted lightblue; */
+  background: rgba(80, 13, 71, 0.37);
   box-sizing: border-box;
 }
 

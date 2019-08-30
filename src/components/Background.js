@@ -4,7 +4,7 @@ import backgroundImage from "../images/placeholder-background-image.jpg";
 
 const Background = () => {
     return(
-        <img className="background-image" src={ backgroundImage } alt="background"/>  
+        <img id="background-image" src={ backgroundImage } alt="background"/>
     )
 }
 
