@@ -50,13 +50,14 @@ class MixingStation extends React.Component {
     render() {
 
         // Create Ingredient components
+        const xOff = 7, yOff = 5, xDiff = 30, yDiff = 20;
         const ingredientDataArray =[
-            { image: ingredient__air,       x: "5%",    y: "5%"},
-            { image: ingredient__water,     x: "35%",   y: "5%"},
-            { image: ingredient__sun,       x: "65%",   y: "5%"},
-            { image: ingredient__plant,     x: "5%",    y: "25%"},
-            { image: ingredient__animal,    x: "35%",   y: "25%"},
-            { image: ingredient__ground,    x: "65%",   y: "25%"}
+            { image: ingredient__air,       x: xOff +  0 + "%",             y: yOff +  0 + "%"},
+            { image: ingredient__water,     x: xOff + xDiff + "%",          y: yOff +  0 + "%"},
+            { image: ingredient__sun,       x: xOff + xDiff*2 + "%",        y: yOff +  0 + "%"},
+            { image: ingredient__plant,     x: xOff +  0 + "%",             y: yOff + yDiff + "%"},
+            { image: ingredient__animal,    x: xOff + xDiff + "%",          y: yOff + yDiff + "%"},
+            { image: ingredient__ground,    x: xOff + xDiff*2 + "%",        y: yOff + yDiff + "%"}
         ];
         const ingredientComponents = ingredientDataArray.map((data, index) => {
             return <Ingredient scale={this.state.scale} handleDragStop={this.handleDragStop} image={data.image} x={data.x} y={data.y} key={index}/>
