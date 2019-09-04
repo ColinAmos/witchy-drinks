@@ -64,11 +64,9 @@ class MixingStation extends React.Component {
         })
 
         return (
-            <div id="mixing-station-wrapper">
-                <div id="mixing-station">
-                    {ingredientComponents}
-                    <img id="cauldron" src={cauldron} alt="" draggable="false"/>
-                </div>
+            <div id="mixing-station">
+                {ingredientComponents}
+                <img id="cauldron" src={cauldron} alt="" draggable="false"/>
             </div>
         )
     }
