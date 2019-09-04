@@ -3,10 +3,17 @@ import React from "react";
 import Draggable from "react-draggable";
 
 
-const Ingredient = ({ scale, image, x, y, handleDragStop }) => {
+const Ingredient = ({ image, x, y, index, inCauldron, scale, handleDragStop }) => {
+    let effectStyle = { display: "none" }
+    if (inCauldron) {
+        effectStyle.display = "block";
+    }
     return (
-        <Draggable scale={scale} onStop={handleDragStop}>
-            <img className="ingredient" alt="" src={image} style={{ left: x, top: y }} draggable="false"/>
+        <Draggable scale={scale} onStop={(e) => handleDragStop(e, index)}>
+            <div className="ingredient-wrapper" style={{ left: x, top: y }}>
+                <img alt="" src={image} id={"ingredient" + index} className={"ingredient"} draggable="false"/>
+                <div className="ingredient--in-cauldron-effect" style={effectStyle}/>
+            </div>
         </Draggable>
     )
 }

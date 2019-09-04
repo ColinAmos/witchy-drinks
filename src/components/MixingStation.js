@@ -16,7 +16,9 @@ class MixingStation extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            scale: 1
+            scale: 1,
+            mouseIsOverCauldron: false,
+            inCauldron: [false, false, false, false, false, false]
         }
     }
 
@@ -43,8 +45,41 @@ class MixingStation extends React.Component {
         })
     }
 
-    handleDragStop = () => {
-        // Do something when an ingredient is dropped
+    pointIsWithinRectangle(point, rectangle) {
+        if (point.x >= rectangle.x &&
+            point.y >= rectangle.y &&
+            point.x <= rectangle.x + rectangle.width &&
+            point.y <= rectangle.y + rectangle.height ) {
+                return true;
+            }
+        return false;
+    }
+
+    handleDragStop = (e, index) => {
+        // Check if ingredient was dropped in cauldron area
+        let newArray = this.state.inCauldron;
+        if (this.isIngredientWithinCauldronArea(e)) {
+            newArray[index] = true;
+            this.setState({
+                inCauldron: newArray
+            });
+        }
+        else {
+            newArray[index] = false;
+            this.setState({
+                inCauldron: newArray
+            });
+        }
+    }
+
+    isIngredientWithinCauldronArea = (e) => {
+        const cauldron = document.getElementById("cauldron");
+        const point = { x: e.clientX, y: e.clientY };
+        const rectangle = cauldron.getBoundingClientRect();
+        if (this.pointIsWithinRectangle(point, rectangle)) {
+            return true;
+        }
+        return false;
     }
 
     resetApp = () => {
@@ -65,9 +100,10 @@ class MixingStation extends React.Component {
             { image: ingredient__ground,    x: xOff + xDiff*2 + "%",        y: yOff + yDiff + "%"}
         ];
         const ingredientComponents = ingredientDataArray.map((data, index) => {
-            return <Ingredient scale={this.state.scale} handleDragStop={this.handleDragStop} image={data.image} x={data.x} y={data.y} key={index}/>
+            return <Ingredient index={index} scale={this.state.scale} inCauldron={this.state.inCauldron[index]} handleDragStop={this.handleDragStop} image={data.image} x={data.x} y={data.y} key={index}/>
         })
 
+        // Render
         return (
             <div id="mixing-station">
                 {ingredientComponents}
