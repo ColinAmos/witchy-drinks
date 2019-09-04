@@ -46,6 +46,11 @@ class MixingStation extends React.Component {
     handleDragStop = () => {
         // Do something when an ingredient is dropped
     }
+
+    resetApp = () => {
+        // Quick and dirty way of resetting the mixing station
+        window.location.reload();
+    }
     
     render() {
 
