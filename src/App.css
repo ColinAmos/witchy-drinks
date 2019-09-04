@@ -47,9 +47,9 @@
 .instruction-text {
   position: absolute;
   text-align: center;
-  width: 50%;
+  width: 100%;
   left: 0;
   bottom: 0;
   color: white;
-  font-size: 14px;
+  font-size: 17px;
 }

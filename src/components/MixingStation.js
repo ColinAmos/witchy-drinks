@@ -67,6 +67,7 @@ class MixingStation extends React.Component {
             <div id="mixing-station">
                 {ingredientComponents}
                 <img id="cauldron" src={cauldron} alt="" draggable="false"/>
+                <p className="instruction-text">Drag two ingredients into the <br /> cauldron to mix them!</p>
             </div>
         )
     }
