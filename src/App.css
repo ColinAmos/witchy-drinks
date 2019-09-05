@@ -42,32 +42,11 @@
   position: absolute;
   width: 100%;
   height: auto;
-
-  /* Prevent blurriness during animations */
-  backface-visibility: hidden;
 }
 
-.ingredient--in-cauldron-effect {
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.301);
-  width: 100px;
-  height: 100px;
-  z-index: -2;
-  /* This animation causes some movement lag */
-  animation-name: spin;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+.glowing {
+  filter: drop-shadow(0 0 10px white);
 }
-
-@keyframes spin {
-  0% {
-    transform: rotateZ(0deg); 
-  }
-  100% {
-    transform: rotateZ(360deg);
-  }
-} 
 
 #cauldron {
   position: absolute;
