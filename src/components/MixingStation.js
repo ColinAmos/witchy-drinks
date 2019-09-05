@@ -60,20 +60,26 @@ class MixingStation extends React.Component {
         let newArray = this.state.inCauldron;
         if (this.isIngredientWithinCauldronArea(e)) {
             newArray[index] = true;
-            this.setState({
-                inCauldron: newArray
-            });
         }
         else {
             newArray[index] = false;
-            this.setState({
-                inCauldron: newArray
-            });
         }
+        this.setState({ inCauldron: newArray });
     }
 
     handleDragStop = (e, index) => {
-        // Do something when an ingredient is dropped
+        // Check if two ingredients are in cauldron area
+        const cauldronArray = this.state.inCauldron;
+        let numberInCauldron = 0, indexesInCauldron = [];
+        cauldronArray.forEach((value, index) => {
+            if (value === true) {
+                numberInCauldron++;
+                indexesInCauldron.push(index);
+            }
+        });
+        if (numberInCauldron >= 2) {
+            console.log("Time to mix!");
+        }
     }
 
     isIngredientWithinCauldronArea = (e) => {
