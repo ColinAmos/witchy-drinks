@@ -55,7 +55,7 @@ class MixingStation extends React.Component {
         return false;
     }
 
-    handleDragStop = (e, index) => {
+    handleDragMove = (e, index) => {
         // Check if ingredient was dropped in cauldron area
         let newArray = this.state.inCauldron;
         if (this.isIngredientWithinCauldronArea(e)) {
@@ -70,6 +70,10 @@ class MixingStation extends React.Component {
                 inCauldron: newArray
             });
         }
+    }
+
+    handleDragStop = (e, index) => {
+        // Do something when an ingredient is dropped
     }
 
     isIngredientWithinCauldronArea = (e) => {
@@ -100,7 +104,7 @@ class MixingStation extends React.Component {
             { image: ingredient__ground,    x: xOff + xDiff*2 + "%",        y: yOff + yDiff + "%"}
         ];
         const ingredientComponents = ingredientDataArray.map((data, index) => {
-            return <Ingredient index={index} scale={this.state.scale} inCauldron={this.state.inCauldron[index]} handleDragStop={this.handleDragStop} image={data.image} x={data.x} y={data.y} key={index}/>
+            return <Ingredient index={index} scale={this.state.scale} inCauldron={this.state.inCauldron[index]} handleDragStop={this.handleDragStop} handleDragMove={this.handleDragMove} image={data.image} x={data.x} y={data.y} key={index}/>
         })
 
         // Render
