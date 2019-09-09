@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Ingredient } from "../components";
+import { Ingredient , ResultScreen } from "../components";
 
 import ingredient__air from "../images/potion__cyan.png";
 import ingredient__water from "../images/potion__blue.png";
@@ -18,7 +18,8 @@ class MixingStation extends React.Component {
         this.state = {
             scale: 1,
             mouseIsOverCauldron: false,
-            inCauldron: [false, false, false, false, false, false]
+            inCauldron: [false, false, false, false, false, false],
+            resultTime: false
         }
     }
 
@@ -78,7 +79,8 @@ class MixingStation extends React.Component {
             }
         });
         if (numberInCauldron >= 2) {
-            console.log("Time to mix!");
+            // Time to mix!
+            this.setState({ resultTime: true });
         }
     }
 
@@ -115,11 +117,14 @@ class MixingStation extends React.Component {
 
         // Render
         return (
-            <div id="mixing-station">
-                {ingredientComponents}
-                <img id="cauldron" src={cauldron} alt="" draggable="false"/>
-                <p className="instruction-text">Drag two ingredients into the <br /> cauldron to mix them!</p>
-            </div>
+            <React.Fragment>
+                <div id="mixing-station">
+                    {ingredientComponents}
+                    <img id="cauldron" src={cauldron} alt="" draggable="false"/>
+                    <p id="instruction-text">Drag two ingredients into the <br /> cauldron to mix them!</p>
+                    {this.state.resultTime ? <ResultScreen onButtonClick={this.resetApp}/> : null}
+                </div>
+            </React.Fragment>
         )
     }
     
