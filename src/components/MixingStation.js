@@ -19,6 +19,7 @@ class MixingStation extends React.Component {
             scale: 1,
             mouseIsOverCauldron: false,
             inCauldron: [false, false, false, false, false, false],
+            indexesInCauldron: [],
             resultTime: false
         }
     }
@@ -80,7 +81,10 @@ class MixingStation extends React.Component {
         });
         if (numberInCauldron >= 2) {
             // Time to mix!
-            this.setState({ resultTime: true });
+            this.setState({
+                resultTime: true,
+                indexesInCauldron: indexesInCauldron
+            });
         }
     }
 
@@ -122,7 +126,7 @@ class MixingStation extends React.Component {
                     {ingredientComponents}
                     <img id="cauldron" src={cauldron} alt="" draggable="false"/>
                     <p id="instruction-text">Drag two ingredients into the <br /> cauldron to mix them!</p>
-                    {this.state.resultTime ? <ResultScreen onButtonClick={this.resetApp}/> : null}
+                    {this.state.resultTime ? <ResultScreen ingredients={this.state.indexesInCauldron} onButtonClick={this.resetApp}/> : null}
                 </div>
             </React.Fragment>
         )
