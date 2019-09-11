@@ -1,7 +1,8 @@
 import React from "react";
-import { Button } from "@material-ui/core";
+import { Button, Paper } from "@material-ui/core";
 
 import { RecipeBook } from "../components";
+
 
 const ResultScreen = ({ ingredients, onButtonClick }) => {
     // Look for recipe in recipe book
@@ -9,10 +10,10 @@ const ResultScreen = ({ ingredients, onButtonClick }) => {
 
     return (
         <div id="result-screen--blocker">
-            <div id="result-screen--window">
-                <h3>Result: {recipeResult}</h3>
-                <Button variant="contained" color="primary" onClick={onButtonClick}>Reset</Button>
-            </div>
+            <Paper elevation={16} id="result-screen--window">
+                <h3>{recipeResult.title}</h3>
+                <Button className="result-screen--button" variant="contained" color="primary" onClick={onButtonClick}>Reset</Button>
+            </Paper>
         </div>
         
     )
