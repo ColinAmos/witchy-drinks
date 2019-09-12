@@ -33,8 +33,8 @@ class MixingStation extends React.Component {
         // Scale app area to fit window
         let area = document.getElementById("mixing-station");
         let style = window.getComputedStyle(area);
-        let w = parseFloat(style.getPropertyValue("width"));
-        let h = parseFloat(style.getPropertyValue("height"));
+        let w = parseFloat(style.getPropertyValue("width")) - 1; //-1 to prevent slivers at edges
+        let h = parseFloat(style.getPropertyValue("height")) - 1;
         let newScale = Math.min(
             (window.innerWidth/w),
             (window.innerHeight/h)
