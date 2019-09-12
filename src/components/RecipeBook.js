@@ -1,8 +1,15 @@
 /// Recipe list
 
+import image_air from "../images/potion__cyan.png";
+import image_water from "../images/potion__blue.png";
+import image_fire from "../images/potion__orange.png";
+import image_plant from "../images/potion__green.png";
+import image_animal from "../images/potion__brown.png";
+import image_ground from "../images/potion__gray.png";
+
 const RecipeBook = {
 
-    ingredientNameFromIndex: {
+    ingredientNames: {
         0: "Air",
         1: "Water",
         2: "Fire",
@@ -11,10 +18,19 @@ const RecipeBook = {
         5: "Ground"
     },
 
+    ingredientImages: {
+        0: image_air,
+        1: image_water,
+        2: image_fire,
+        3: image_plant,
+        4: image_animal,
+        5: image_ground
+    },
+
     getResultFromIngredients: (ingredient1, ingredient2) => {
 
         const tryCombination = (ingredient1, ingredient2) => {
-            const combination = RecipeBook.ingredientNameFromIndex[ingredient1] + " + " +  RecipeBook.ingredientNameFromIndex[ingredient2];
+            const combination = RecipeBook.ingredientNames[ingredient1] + " + " +  RecipeBook.ingredientNames[ingredient2];
             let title, description;
             switch(combination) {
                 case "Air + Water":     title = "Bubble Bringer"; description ="Makes you burp bubbles!"; break;

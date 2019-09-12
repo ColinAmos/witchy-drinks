@@ -113,10 +113,24 @@
 }
 
 .result-screen--image {
-  width: auto;
+  width: 100px;
   height: 100px;
   margin-top: 20px;
   margin-bottom: 0;
+  position: relative;
+}
+
+.result-screen--image--base {
+  height: 100%;
+  width: auto;
+}
+
+.result-screen--image--masked {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  left: 0;
+  top: 0;
 }
 
 .result-screen--description {

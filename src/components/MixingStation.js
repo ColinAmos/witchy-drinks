@@ -4,7 +4,7 @@ import { Ingredient , ResultScreen } from "../components";
 
 import ingredient__air from "../images/potion__cyan.png";
 import ingredient__water from "../images/potion__blue.png";
-import ingredient__sun from "../images/potion__orange.png";
+import ingredient__fire from "../images/potion__orange.png";
 import ingredient__plant from "../images/potion__green.png";
 import ingredient__animal from "../images/potion__brown.png";
 import ingredient__ground from "../images/potion__gray.png";
@@ -110,7 +110,7 @@ class MixingStation extends React.Component {
         const ingredientDataArray =[
             { image: ingredient__air,       x: xOff +  0 + "%",             y: yOff +  0 + "%"},
             { image: ingredient__water,     x: xOff + xDiff + "%",          y: yOff +  0 + "%"},
-            { image: ingredient__sun,       x: xOff + xDiff*2 + "%",        y: yOff +  0 + "%"},
+            { image: ingredient__fire,       x: xOff + xDiff*2 + "%",        y: yOff +  0 + "%"},
             { image: ingredient__plant,     x: xOff +  0 + "%",             y: yOff + yDiff + "%"},
             { image: ingredient__animal,    x: xOff + xDiff + "%",          y: yOff + yDiff + "%"},
             { image: ingredient__ground,    x: xOff + xDiff*2 + "%",        y: yOff + yDiff + "%"}
