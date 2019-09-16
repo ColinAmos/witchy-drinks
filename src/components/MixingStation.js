@@ -110,7 +110,7 @@ class MixingStation extends React.Component {
         const ingredientDataArray =[
             { image: ingredient__air,       x: xOff +  0 + "%",             y: yOff +  0 + "%"},
             { image: ingredient__water,     x: xOff + xDiff + "%",          y: yOff +  0 + "%"},
-            { image: ingredient__fire,       x: xOff + xDiff*2 + "%",        y: yOff +  0 + "%"},
+            { image: ingredient__fire,      x: xOff + xDiff*2 + "%",        y: yOff +  0 + "%"},
             { image: ingredient__plant,     x: xOff +  0 + "%",             y: yOff + yDiff + "%"},
             { image: ingredient__animal,    x: xOff + xDiff + "%",          y: yOff + yDiff + "%"},
             { image: ingredient__ground,    x: xOff + xDiff*2 + "%",        y: yOff + yDiff + "%"}
@@ -121,14 +121,12 @@ class MixingStation extends React.Component {
 
         // Render
         return (
-            <React.Fragment>
-                <div id="mixing-station">
-                    {ingredientComponents}
-                    <img id="cauldron" src={cauldron} alt="" draggable="false"/>
-                    <p id="instruction-text">Drag two ingredients into the <br /> cauldron to mix them!</p>
-                    {this.state.resultTime ? <ResultScreen ingredients={this.state.indexesInCauldron} onButtonClick={this.resetApp}/> : null}
-                </div>
-            </React.Fragment>
+            <div id="mixing-station">
+                {ingredientComponents}
+                <img id="cauldron" src={cauldron} alt="" draggable="false"/>
+                <p id="instruction-text">Drag two ingredients into the <br /> cauldron to mix them!</p>
+                {this.state.resultTime ? <ResultScreen ingredients={this.state.indexesInCauldron} onButtonClick={this.resetApp}/> : null}
+            </div>
         )
     }
     

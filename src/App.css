@@ -5,6 +5,7 @@
 * {
   user-select: none;
   font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
 }
 
 #app-container {
@@ -49,6 +50,14 @@
   height: auto;
 }
 
+.ingredient--label {
+  position: absolute;
+  left: 54%;
+  top: 73px;
+  transform: translate(-50%, 0);
+  color: white;
+}
+
 .glowing {
   filter: drop-shadow(0 0 10px white);
 }
@@ -72,6 +81,20 @@
   color: white;
   font-size: 17px;
   z-index: -3;
+}
+
+@keyframes resultEntrance {
+  0% {
+    top: 66%;
+    opacity: 0;
+  }
+  80% {
+    top: 48%;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
 }
 
 #result-screen--blocker {
@@ -98,6 +121,9 @@
   flex-flow: column nowrap;
   align-items: center;
   color: white;
+  animation-name: resultEntrance;
+  animation-duration: 0.7s;
+  animation-timing-function: ease;
 }
 
 .result-screen--title {
@@ -120,17 +146,13 @@
   position: relative;
 }
 
-.result-screen--image--base {
+.result-screen--image > * {
   height: 100%;
   width: auto;
-}
-
-.result-screen--image--masked {
   position: absolute;
-  height: 100%;
-  width: auto;
-  left: 0;
-  top: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .result-screen--description {

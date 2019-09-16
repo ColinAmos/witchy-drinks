@@ -39,7 +39,7 @@ const RecipeBook = {
                 case "Plant + Water":   title = "Sip of Growth"; description ="Makes you taller!"; break;
                 case "Plant + Air":     title = "Mint Filter"; description ="Gives you fresh breath!"; break;
                 case "Plant + Fire":    title = "Chloroplast Blast"; description ="Turns your skin green!"; break;
-                case "Animal + Water":  title = "Salty Snorkel"; description ="Gives you gills and fins!"; break;
+                case "Animal + Water":  title = "Swift Snorkel"; description ="Gives you gills and fins!"; break;
                 case "Animal + Air":    title = "Feather Flurry"; description ="Gives you wings!"; break;
                 case "Animal + Fire":   title = "Bio Glow"; description ="Makes your body glow!"; break;
                 case "Animal + Plant":  title = "Background Blur"; description ="Gives you camouflauge!"; break;
