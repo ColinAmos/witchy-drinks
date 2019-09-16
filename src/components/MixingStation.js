@@ -17,10 +17,10 @@ class MixingStation extends React.Component {
         super(props);
         this.state = {
             scale: 1,
-            mouseIsOverCauldron: false,
             inCauldron: [false, false, false, false, false, false],
             indexesInCauldron: [],
-            resultTime: false
+            resultTime: false,
+            timeToReset: false
         }
     }
 
@@ -99,8 +99,12 @@ class MixingStation extends React.Component {
     }
 
     resetApp = () => {
-        // Quick and dirty way of resetting the mixing station
-        window.location.reload();
+        this.setState({
+            inCauldron: [false, false, false, false, false, false],
+            indexesInCauldron: [],
+            resultTime: false,
+            timeToReset: true
+        });
     }
     
     render() {
@@ -116,8 +120,13 @@ class MixingStation extends React.Component {
             { image: ingredient__ground,    x: xOff + xDiff*2 + "%",        y: yOff + yDiff + "%"}
         ];
         const ingredientComponents = ingredientDataArray.map((data, index) => {
-            return <Ingredient index={index} scale={this.state.scale} inCauldron={this.state.inCauldron[index]} handleDragStop={this.handleDragStop} handleDragMove={this.handleDragMove} image={data.image} x={data.x} y={data.y} key={index}/>
+            return <Ingredient timeToReset={this.state.timeToReset} index={index} scale={this.state.scale} inCauldron={this.state.inCauldron[index]} handleDragStop={this.handleDragStop} handleDragMove={this.handleDragMove} image={data.image} x={data.x} y={data.y} key={index}/>
         })
+
+        // Reset positions if needed
+        if (this.state.timeToReset === true) {
+            this.setState({ timeToReset: false });
+        }
 
         // Render
         return (
