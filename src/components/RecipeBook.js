@@ -34,20 +34,20 @@ const RecipeBook = {
             let title, description;
             switch(combination) {
                 case "Air + Water":     title = "Bubble Bringer"; description ="Makes you burp bubbles!"; break;
-                case "Fire + Water":    title = "Sweat Sauce"; description ="Makes you sweat! A lot!"; break;
+                case "Fire + Water":    title = "Sweat Sauce"; description ="Makes you sweat!"; break;
                 case "Fire + Air":      title = "Dragon Drink"; description ="Let's you breathe fire!"; break;
                 case "Plant + Water":   title = "Gulp of Growth"; description ="Makes you taller!"; break;
-                case "Plant + Air":     title = "Mint Filter"; description ="Gives you fresh breath!"; break;
+                case "Plant + Air":     title = "Mist of Mint"; description ="Gives you fresh breath!"; break;
                 case "Plant + Fire":    title = "Chloroplast Blast"; description ="Turns your skin green!"; break;
                 case "Animal + Water":  title = "Shot of Snorkel"; description ="Gives you gills and fins!"; break;
                 case "Animal + Air":    title = "Feather Flurry"; description ="Gives you wings!"; break;
-                case "Animal + Fire":   title = "Bio Glow"; description ="Makes your body glow!"; break;
+                case "Animal + Fire":   title = "Luminous Lighter"; description ="Makes your body glow!"; break;
                 case "Animal + Plant":  title = "Background Blur"; description ="Gives you camouflauge!"; break;
-                case "Ground + Water":  title = "Slime Time"; description ="Makes you slimy!"; break;
-                case "Ground + Air":    title = "Smoke Slurry"; description ="Surrounds you in a cloud of dust!"; break;
+                case "Ground + Water":  title = "Slime Slurry"; description ="Makes you slimy!"; break;
+                case "Ground + Air":    title = "Smoke Shake"; description ="Surrounds you in a cloud of dust!"; break;
                 case "Ground + Fire":   title = "Magma Meltdown"; description ="Makes food melt in your mouth, literally!"; break;
                 case "Ground + Plant":  title = "Moss Maker"; description ="Covers you with moss!"; break;
-                case "Ground + Animal": title = "Beast Burrow"; description ="Makes you really want to dig a hole!"; break;
+                case "Ground + Animal": title = "Burrowing Beast"; description ="Makes you really want to dig a hole!"; break;
                 default:
                     return null;
             }
