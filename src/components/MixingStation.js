@@ -25,9 +25,15 @@ class MixingStation extends React.Component {
         }
     }
 
+    log(string) {
+        this.setState({ debugString: string });
+    }
+
     componentDidMount() {
         this.updateDimensions();
-        window.addEventListener("resize", this.updateDimensions);
+        window.addEventListener("resize", (e) => {
+            this.updateDimensions(e);
+        });
         document.body.addEventListener("touchmove", (e) => {
             e.preventDefault();
         });
@@ -40,8 +46,8 @@ class MixingStation extends React.Component {
         let w = parseFloat(style.getPropertyValue("width")) - 1; //-1 to prevent slivers at edges
         let h = parseFloat(style.getPropertyValue("height")) - 1;
         let newScale = Math.min(
-            (window.innerWidth/w),
-            (window.innerHeight/h)
+            (document.documentElement.clientWidth/w), // Use clientWidth/Height b/c innerWidth/Height bugs out on iOS Chrome
+            (document.documentElement.clientHeight/h)
         )
         // Scale active content area
         if (area) area.style.transform = "translate(-50%, -50%) scale(" + newScale + ") ";
