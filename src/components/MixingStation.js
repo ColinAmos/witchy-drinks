@@ -20,7 +20,8 @@ class MixingStation extends React.Component {
             inCauldron: [false, false, false, false, false, false],
             indexesInCauldron: [],
             resultTime: false,
-            timeToReset: false
+            timeToReset: false,
+            debugString: ""
         }
     }
 
@@ -48,16 +49,6 @@ class MixingStation extends React.Component {
         this.setState({
             scale: newScale
         })
-    }
-
-    pointIsWithinRectangle(point, rectangle) {
-        if (point.x >= rectangle.x &&
-            point.y >= rectangle.y &&
-            point.x <= rectangle.x + rectangle.width &&
-            point.y <= rectangle.y + rectangle.height ) {
-                return true;
-            }
-        return false;
     }
 
     handleDragMove = (e, index) => {
@@ -93,11 +84,39 @@ class MixingStation extends React.Component {
 
     isIngredientWithinCauldronArea = (e) => {
         const cauldron = document.getElementById("cauldron");
-        const point = { x: e.clientX, y: e.clientY };
+        const point = this.getRawCursorPosition(e);
         const rectangle = cauldron.getBoundingClientRect();
         if (this.pointIsWithinRectangle(point, rectangle)) {
             return true;
         }
+        return false;
+    }
+
+    // Get unadjusted mouse position relative to document
+    getRawCursorPosition(e) {
+        let posx = 0;
+        let posy = 0;
+        if (e.pageX || e.pageY) {
+            posx = e.pageX;
+            posy = e.pageY;
+        }
+        else if (e.clientX || e.clientY) {
+            posx = e.clientX + document.body.scrollLeft
+            + document.documentElement.scrollLeft;
+            posy = e.clientY + document.body.scrollTop
+            + document.documentElement.scrollTop;
+        }
+        return {"x": posx, "y": posy};
+    }
+
+    pointIsWithinRectangle(point, rectangle) {
+        //this.setState({ debugString: [point.x, point.y, rectangle.left, rectangle.top, rectangle.width, rectangle.height].join(", ") })
+        if (point.x >= rectangle.left &&
+            point.y >= rectangle.top &&
+            point.x <= rectangle.left + rectangle.width &&
+            point.y <= rectangle.top + rectangle.height ) {
+                return true;
+            }
         return false;
     }
 
@@ -138,6 +157,7 @@ class MixingStation extends React.Component {
                 <img id="cauldron" src={cauldron} alt="" draggable="false"/>
                 <p id="instruction-text">Drag two ingredients into the <br /> cauldron to mix them!</p>
                 {this.state.resultTime ? <ResultScreen ingredients={this.state.indexesInCauldron} onButtonClick={this.resetApp}/> : null}
+                <p id="debug-log">{this.state.debugString}</p>
             </div>
         )
     }

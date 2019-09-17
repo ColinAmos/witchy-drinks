@@ -8,6 +8,16 @@ body {
   font-size: 16px;
 }
 
+#debug-log {
+  background: rgba(0, 0, 0, 0.459);
+  color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-width: 66%;
+  font-size: 14px;
+}
+
 #app-container {
   position: relative;
   width: 100vw;
