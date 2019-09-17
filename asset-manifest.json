@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/witchy-drinks/static/css/main.84b8b87a.chunk.css",
+    "main.css": "/witchy-drinks/static/css/main.bfd632ca.chunk.css",
     "main.js": "/witchy-drinks/static/js/main.c6e2e193.chunk.js",
     "main.js.map": "/witchy-drinks/static/js/main.c6e2e193.chunk.js.map",
     "runtime~main.js": "/witchy-drinks/static/js/runtime~main.1e3ba57a.js",
@@ -8,9 +8,9 @@
     "static/js/2.b1cda37a.chunk.js": "/witchy-drinks/static/js/2.b1cda37a.chunk.js",
     "static/js/2.b1cda37a.chunk.js.map": "/witchy-drinks/static/js/2.b1cda37a.chunk.js.map",
     "index.html": "/witchy-drinks/index.html",
-    "precache-manifest.62af042fbc1bfb414362fa7bec3dc7bf.js": "/witchy-drinks/precache-manifest.62af042fbc1bfb414362fa7bec3dc7bf.js",
+    "precache-manifest.45850a347dceb0e1e79a5e34f2c5e322.js": "/witchy-drinks/precache-manifest.45850a347dceb0e1e79a5e34f2c5e322.js",
     "service-worker.js": "/witchy-drinks/service-worker.js",
-    "static/css/main.84b8b87a.chunk.css.map": "/witchy-drinks/static/css/main.84b8b87a.chunk.css.map",
+    "static/css/main.bfd632ca.chunk.css.map": "/witchy-drinks/static/css/main.bfd632ca.chunk.css.map",
     "static/media/cauldron.png": "/witchy-drinks/static/media/cauldron.3ec68944.png",
     "static/media/placeholder-background-image.jpg": "/witchy-drinks/static/media/placeholder-background-image.defe5c60.jpg",
     "static/media/potion-mask.png": "/witchy-drinks/static/media/potion-mask.eae7f448.png",
