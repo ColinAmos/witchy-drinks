@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/witchy-drinks/precache-manifest.d654bc3600945d1f1031ec355341ee76.js"
+  "/witchy-drinks/precache-manifest.accfa5f6f1d202fefd36450e8752a463.js"
 );
 
 self.addEventListener('message', (event) => {
