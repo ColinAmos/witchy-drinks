@@ -22,7 +22,7 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(79, 58, 85);
+  background-color: rgb(71, 16, 50);
   overflow: hidden;
 }
 
@@ -35,6 +35,15 @@ body {
   height: 100%;
 }
 
+#background-image--cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 7, 39, 0.5);
+}
+
 #mixing-station {
   width: 400px;
   height: 600px;
@@ -42,7 +51,7 @@ body {
   left: 50%;
   top: 50%;
   /* border: 2px dotted lightblue; */
-  background: rgba(44, 7, 39, 0.541);
+  /* background: rgba(44, 7, 39, 0.5); */
   box-sizing: border-box;
 }
 

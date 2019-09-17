@@ -4,7 +4,12 @@ import backgroundImage from "../images/placeholder-background-image.jpg";
 
 const Background = () => {
     return(
-        <img id="background-image" src={ backgroundImage } alt="" draggable={false}/>
+        <React.Fragment>
+            
+            <img id="background-image" src={ backgroundImage } alt="" draggable={false}/>
+            <div id="background-image--cover"></div>
+        </React.Fragment>
+        
     )
 }
 

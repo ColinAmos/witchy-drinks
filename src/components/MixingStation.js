@@ -40,6 +40,7 @@ class MixingStation extends React.Component {
     }
 
     updateDimensions = () => {
+        //this.log([document.body.clientHeight, document.documentElement.clientHeight, Date.now()/1000000].join(", "));
         // Scale app area to fit window
         let area = document.getElementById("mixing-station");
         let style = window.getComputedStyle(area);
