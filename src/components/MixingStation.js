@@ -27,6 +27,9 @@ class MixingStation extends React.Component {
     componentDidMount() {
         this.updateDimensions();
         window.addEventListener("resize", this.updateDimensions);
+        document.body.addEventListener("touchmove", (e) => {
+            e.preventDefault();
+        });
     }
 
     updateDimensions = () => {

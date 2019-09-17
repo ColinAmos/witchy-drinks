@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans|Varela+Round|PT+Sans&display=swap');
 
 
-* {
+body {
   user-select: none;
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;
