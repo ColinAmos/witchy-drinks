@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4f28dd0d13cd6c9470dc5282c0c3cf3d",
+    "revision": "3bc6274c90ffb479e05024d465724f77",
     "url": "/witchy-drinks/index.html"
   },
   {
-    "revision": "2c1a8a1b73432b6b52a8",
-    "url": "/witchy-drinks/static/css/main.7a04815b.chunk.css"
+    "revision": "cca644509aa48da5ac17",
+    "url": "/witchy-drinks/static/css/main.97adc36b.chunk.css"
   },
   {
     "revision": "fae5bb13ed04e454c2bc",
     "url": "/witchy-drinks/static/js/2.b1cda37a.chunk.js"
   },
   {
-    "revision": "2c1a8a1b73432b6b52a8",
-    "url": "/witchy-drinks/static/js/main.dae1a260.chunk.js"
+    "revision": "cca644509aa48da5ac17",
+    "url": "/witchy-drinks/static/js/main.d6659147.chunk.js"
   },
   {
     "revision": "426f173abde95159a2bb",
